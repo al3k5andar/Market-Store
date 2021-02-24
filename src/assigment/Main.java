@@ -1,4 +1,7 @@
-package com.aleksandar;
+package assigment;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class Main
 {
@@ -13,7 +16,11 @@ public class Main
         smithCard.purchase(850);
 
         User max= new User("Max","Payne");
-        Card maxCard= new Gold(max, 800);
-        maxCard.purchase(1300);
+        Card maxCard= new Gold(max, 1500);
+        maxCard.purchase(500);
+
+        List<Card> cards= Arrays.asList(johnCard, smithCard, maxCard);
+
+        cards.forEach(Card::printInfo);
     }
 }
