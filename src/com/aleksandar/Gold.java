@@ -9,15 +9,15 @@ public class Gold extends Card
 
     @Override
     public double calculateDiscountRate() {
-        return 2+ discountHelper();
+        return 2+ calculateExtraDiscount();
     }
 
-    private int discountHelper(){
+    private int calculateExtraDiscount(){
         int discountGrow= 0;
-        double pmtLabel= super.getPreviousMonthTurnover();
+        double previousTurnover= super.getPreviousMonthTurnover();
 
-        while (pmtLabel > 0) {
-            pmtLabel-= 100;
+        while (previousTurnover > 0) {
+            previousTurnover-= 100;
             discountGrow++;
             try {
                 if (discountGrow> 8)
