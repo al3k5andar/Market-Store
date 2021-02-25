@@ -7,17 +7,14 @@ public class Main
 {
     public static void main(String[] args) {
 
-        User john= new User("John","Dou");
-        Card johnCard= new Bronze(john, 150);
+        Card johnCard= new Bronze(new User("John","Dou"), 100);
         johnCard.purchase(100);
 
-        User smith= new User("Smith","Jonson");
-        Card smithCard = new Silver(smith, 600);
+        Card smithCard = new Silver(new User("Smith","Jonson"), 600);
         smithCard.purchase(850);
 
-        User max= new User("Max","Payne");
-        Card maxCard= new Gold(max, 1500);
-        maxCard.purchase(-500);
+        Card maxCard= new Gold(new User("Max","Payne"), 1500);
+        maxCard.purchase(1300);
 
         List<Card> cards= Arrays.asList(johnCard, smithCard, maxCard);
 
