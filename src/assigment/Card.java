@@ -17,11 +17,15 @@ public abstract class Card
 
     public double purchase(double purchaseValue){
 
+//        Check does the purchase value smaller than zero, if it does than throw an exception
         try {
+            if(purchaseValue< 0)
+                throw new NegativeNumberException();
             this.currentPurchase= purchaseValue;
             return purchaseValue- calculatePurchaseDiscount(purchaseValue, calculateDiscountRate());
         }
-        catch (Exception e){
+        catch (NegativeNumberException e){
+            this.currentPurchase= 0;
             return 0;
         }
     }

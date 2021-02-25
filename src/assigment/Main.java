@@ -17,7 +17,7 @@ public class Main
 
         User max= new User("Max","Payne");
         Card maxCard= new Gold(max, 1500);
-        maxCard.purchase(500);
+        maxCard.purchase(-500);
 
         List<Card> cards= Arrays.asList(johnCard, smithCard, maxCard);
 
